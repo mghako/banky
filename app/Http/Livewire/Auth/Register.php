@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Auth;
 
+use App\Models\Company;
 use App\Models\Tenant;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
@@ -31,9 +32,9 @@ class Register extends Component
             'name' => ['required'],
             'companyName' => ['required', 'string', 'unique:tenants,name'],
             'email' => ['required', 'email', 'unique:users'],
-            'password' => ['required', 'min:8', 'numeric'],
+            'password' => ['required', 'min:8'],
         ]);
-        dd('passed');
+        
         $tenant = Tenant::create(['name' => $this->companyName]);
 
         $user = User::create([
