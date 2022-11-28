@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('accounts', function (Blueprint $table) {
             $table->id();
+            $table->string('account_number')->unique()->index();
+            $table->date('open_date');
+            $table->boolean('active')->default(false);
             $table->unsignedBigInteger('tenant_id')->index();
             $table->timestamps();
         });
