@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'dashboard')->name('dashboard');
+Route::view('/', 'dashboard')->name('dashboard')->middleware('auth');
 
 Route::get('dashboard', function() {
     return view('dashboard');
