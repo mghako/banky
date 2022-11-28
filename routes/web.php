@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'welcome')->name('dashboard');
+Route::view('/', 'dashboard')->name('dashboard');
 
 Route::get('dashboard', function() {
     return view('dashboard');
