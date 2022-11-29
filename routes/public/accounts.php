@@ -3,4 +3,7 @@
 use App\Http\Controllers\Resources\AccountController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('accounts', [AccountController::class, 'index']);
+Route::name('accounts.')->prefix('accounts')->group(function() {
+    Route::get('/', [AccountController::class, 'index'])->name('index');
+
+});
